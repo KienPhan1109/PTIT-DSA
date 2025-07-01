@@ -12,7 +12,7 @@ int main() {
     scanf("%d", &col);
 
     printf("Tổng số đường đi từ (0, 0) đến (%d, %d) là %d\n", row - 1, col - 1, countPaths(0, 0, row, col));
-    return 0;
+    return 0;a
 }
 // Ý tưởng ban đầu
 // Base case là giới hạn cuối cùng của đường đi tức ở biên cuối bên phải hoặc bên dưới
