@@ -1,26 +1,21 @@
 #include <stdio.h>
+#include <string.h>
 
-int sum(int firstNum, int secondNum) {
-    if (firstNum == secondNum || firstNum + 1 == secondNum || secondNum + 1 == firstNum) return 0;
-
-    if (firstNum < secondNum) return (firstNum + 1 ) + sum(firstNum + 1, secondNum);
-    else return (firstNum - 1) + sum(firstNum - 1, secondNum);
+int isSymmetry(char str[], int left, int right) {
+    if (left >= right) return 1;
+    if (str[left] != str[right]) return 0;
+    return isSymmetry(str, left + 1, right - 1);
 }
 
 int main() {
-    int firstNum, secondNum;
-    do {
-        printf("Nhập vào số thứ 1: ");
-        scanf("%d", &firstNum);
-        if (firstNum < 1) printf("Số thứ 1 phải là số nguyên!\n");
-    } while (firstNum < 1);
+    char str[100];
+    printf("Nhập vào chuỗi: ");
+    fgets(str, sizeof(str), stdin);
+    str[strcspn(str, "\n")] = '\0';
 
-    do {
-        printf("Nhập vào số thứ 2: ");
-        scanf("%d", &secondNum);
-        if (secondNum < 1) printf("Số thứ 2 phải là số nguyên!\n");
-    } while (secondNum < 1);
+    int len = strlen(str);
+    if (isSymmetry(str, 0, len - 1)) printf("Palindrome valid\n");
+    else printf("Palindrome invalid\n");
 
-    int result = sum(firstNum, secondNum);
-    printf("Giai thừa của n là %d\n", result);
+    return 0;
 }
