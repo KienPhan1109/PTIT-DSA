@@ -24,7 +24,7 @@ int main() {
     {
         if (arr[i] == arr[j]) {
             printf("Cặp đối xứng (%d, %d)\n", arr[i], arr[j]);
-            found = 1;
+            found = 1;  
         }
         i++;
         j--;
