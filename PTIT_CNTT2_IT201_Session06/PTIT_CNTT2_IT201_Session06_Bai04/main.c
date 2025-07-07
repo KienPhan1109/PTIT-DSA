@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 void haNoiTower(int n, char source, char temp, char target) {
+    int count = 0;
     if (n == 1) {
         printf("Đĩa 1 di chuyển từ %c sang %c\n", source, target);
         return;
